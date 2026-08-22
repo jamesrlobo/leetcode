@@ -1,0 +1,19 @@
+# 3162. Find the Number of Good Pairs I
+# Beats: 39.55%
+def numberOfPairs(nums1, nums2, k):
+    output = []
+    for i in range(len(nums1)):
+        for j in range(len(nums2)):
+            if nums1[i] % (nums2[j]*k) == 0:
+                output.append((i,j))
+    return len(output)
+
+
+# nums1 = [1,3,4]
+# nums2 = [1,3,4]
+# k = 1
+
+nums1 = [1,2,4,12]
+nums2 = [2,4]
+k = 3
+print(numberOfPairs(nums1, nums2, k))
